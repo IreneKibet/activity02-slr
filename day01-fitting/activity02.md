@@ -129,7 +129,7 @@ library(tidymodels)
     ## ✖ dplyr::lag()      masks stats::lag()
     ## ✖ yardstick::spec() masks readr::spec()
     ## ✖ recipes::step()   masks stats::step()
-    ## • Search for functions across packages at https://www.tidymodels.org/find/
+    ## • Use tidymodels_prefer() to resolve common conflicts.
 
 ``` r
 #Checking for missing values#
@@ -589,7 +589,9 @@ estimates table.
     parameters. That is, replace “intercept” and “slope” with the
     appropriate values
 
-$\hat{\texttt{pf\score}} = 4.284 + 0.542 \times \texttt{pf\_expression\_control}$
+$$
+\hat{\texttt{pf\score}} = 4.284 + 0.542 \times \texttt{pf\_expression\_control}
+$$
 
 6.  Interpret each of the estimated parameters from (5) in the context
     of this research question. That is, what do these values represent?
@@ -639,9 +641,9 @@ After doing this and running the code, answer the following questions:
     what would a “good” value of $R^2$ would be? Can/should this value
     be “perfect”?
 
-> 71% of the variance in `pf_score` can be explained by
-> `pf_expression_control`. This means that the model fits the data
-> fairly well.
+71% of the variance in `pf_score` can be explained by
+`pf_expression_control`. This means that the model fits the data fairly
+well.
 
 #### 4.B: Assess with test/train
 
@@ -699,18 +701,20 @@ still doing a linear model.
     parameters. That is, replace “intercept” and “slope” with the
     appropriate values
 
-$\hat{\texttt{pf\score}} = 4.321 + 0.536 \times \texttt{pf\_expression\_control}$
+$$
+\hat{\texttt{pf\score}} = 4.321 + 0.536 \times \texttt{pf\_expression\_control}
+$$
 
 10. Interpret each of the estimated parameters from (10) in the context
     of this research question. That is, what do these values represent?
 
-> For countries with a `pf_expression_control` of 0 (those with the
-> largest amount of political pressure on media content), we expect
-> their mean personal freedom score to be 4.321.
+For countries with a `pf_expression_control` of 0 (those with the
+largest amount of political pressure on media content), we expect their
+mean personal freedom score to be 4.321.
 
-> For every 1 unit increase in `pf_expression_control` (political
-> pressure on media content index), we expect a country’s mean personal
-> freedom score to increase 0.536 units.
+For every 1 unit increase in `pf_expression_control` (political pressure
+on media content index), we expect a country’s mean personal freedom
+score to increase 0.536 units.
 
 Now we will assess using the testing data set.
 
